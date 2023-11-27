@@ -9,13 +9,16 @@
 
 int check_cycle(listint_t *list)
 {
+	if (list == NULL)
+		return (1);
+
 	listint_t *ptr;
 
-	ptr = list;
+	ptr = list->next;
 
 	while (ptr != NULL)
 	{
-		if (ptr->next == list)
+		if (ptr == list)
 			return (1);
 		ptr = ptr->next;
 	}
