@@ -13,9 +13,9 @@ int is_palindrome(listint_t **head)
 	unsigned int m, start = 0;
 	int arr[10265];
 	
+	current = *head;
 	if (current == NULL)
 		return (1);
-	current = *head;
 	m = 0;
 
 	while (current != NULL)
@@ -25,7 +25,6 @@ int is_palindrome(listint_t **head)
 		m++;
 	}
 	m -= 1;
-
 	while (start < m)
 	{
 		if (arr[start] != arr[m])
