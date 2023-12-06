@@ -22,7 +22,8 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		m++;
 	}
-	m -= m;
+	m -= 1;
+
 	while (start < m)
 	{
 		if (arr[start] != arr[m])
