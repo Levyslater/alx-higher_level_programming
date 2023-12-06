@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def max_integer(my_list=[]):
+    if len(my_list) < 1:
+        return
     new_list = [item if type(item) is not list else item[:]
                 for item in my_list]
     i = len(new_list) - 1
