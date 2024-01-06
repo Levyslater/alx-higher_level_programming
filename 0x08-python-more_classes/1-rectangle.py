@@ -1,15 +1,22 @@
 #!/usr/bin/python3
+"""A Rectangle module"""
+
+
 class Rectangle:
+    """A class named Rectangle"""
     def __init__(self, width=0, height=0):
+        """Method initializes an instance once created"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """method to retrieve attribute width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """method sets value for attribute width"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -19,10 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """method to retrieve the value of attribute height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """method to set the value of attribute height"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         elif value < 0:
