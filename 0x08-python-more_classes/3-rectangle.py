@@ -51,11 +51,13 @@ class Rectangle:
             return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """module prints hashes of rectangle"""
-        if self.__width == 0 | self.__height == 0:
+        """module returns string representation of rectangle with hashes"""
+        if self.__width == 0 or self.__height == 0:
             return ''
+        hashes = []
         for i in range(self.__height):
             for j in range(self.__width):
-                print('#', end='')
-            print()
-        return ''
+                hashes.append('#')
+            if i != self.__height - 1:
+                hashes.append("\n")
+        return (''.join(hashes))
