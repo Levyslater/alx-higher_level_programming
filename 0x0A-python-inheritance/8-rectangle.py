@@ -1,19 +1,15 @@
 #!/usr/bin/python3
+"""class Rectangle that inherits from BaseGeometry
+(7-base_geometry.py)
+"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-class BaseGeometry:
-    """My class that raises an exception"""
-    def area(self):
-        raise Exception("area() is not set")
-    def integer_validator(self, name, value):
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
 
 class Rectangle(BaseGeometry):
     """My rectangle class"""
     def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
+        """Initializes a new instance"""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
