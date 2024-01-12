@@ -1,0 +1,19 @@
+# Test cases for MyList class
+
+
+
+>>> my_list = MyList([4, 2, 7, 1, 5])
+>>> my_list.print_sorted()
+[1, 2, 4, 5, 7]
+
+>>> my_empty_list = MyList()
+>>> my_empty_list.print_sorted()
+[]
+
+>>> my_negative_list = MyList([-4, -2, -7, -1, -5])
+>>> my_negative_list.print_sorted()
+[-7, -5, -4, -2, -1]
+
+>>> my_mixed_list = MyList([4, -2, 7, -1, 5])
+>>> my_mixed_list.print_sorted()
+[-2, -1, 4, 5, 7]
