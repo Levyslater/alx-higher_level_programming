@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Test case for rectangle class"""
 import unittest
 from models.rectangle import Rectangle
 
@@ -80,3 +82,7 @@ class TestRectangle(unittest.TestCase):
         dictionary = rectangle.to_dictionary()
         return_dct = {'id': 1, 'width': 10, 'height': 5, 'x': 2, 'y': 3}
         self.assertEqual(dictionary, return_dct)
+
+
+if __name__ == "__main__":
+    unittest.main()

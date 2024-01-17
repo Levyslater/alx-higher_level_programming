@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""Test case for square class"""
 import unittest
 from models.square import Square
 

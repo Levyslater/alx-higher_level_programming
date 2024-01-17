@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for base.py.
-
+""" Defines unittests for base.py
 """
 import os
 import unittest
@@ -202,3 +201,6 @@ class TestBase_save_to_file(unittest.TestCase):
     def test_save_to_file_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Square.save_to_file([], 1)
+
+if __name__ == "__main__":
+    unittest.main()
