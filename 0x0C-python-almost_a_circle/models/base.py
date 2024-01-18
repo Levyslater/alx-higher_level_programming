@@ -49,7 +49,7 @@ class Base:
             None
         """
         if list_objs is None:
-            list_objs = []
+            list_objs = "[]"
 
         json_list = [obj.to_dictionary() for obj in list_objs]
         json_string = cls.to_json_string(json_list)
