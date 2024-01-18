@@ -35,7 +35,7 @@ class Base:
         if list_dictionaries:
             return json.dumps(list_dictionaries)
         else:
-            raise ValueError("Input list is empty")
+            return "[]"
         
     @classmethod
     def save_to_file(cls, list_objs):

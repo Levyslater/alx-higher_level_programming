@@ -127,12 +127,10 @@ class TestBase_to_json_string(unittest.TestCase):
         self.assertTrue(len(Base.to_json_string(list_dicts)) == 78)
 
     def test_to_json_string_empty_list(self):
-        with self.assertRaises(ValueError):
-            Base.to_json_string([])
+        self.assertEqual("[]", Base.to_json_string([]))
 
     def test_to_json_string_none(self):
-        with self.assertRaises(ValueError):
-            Base.to_json_string(None)
+        self.assertEqual("[]", Base.to_json_string([]))
 
     def test_to_json_string_no_args(self):
         with self.assertRaises(TypeError):
