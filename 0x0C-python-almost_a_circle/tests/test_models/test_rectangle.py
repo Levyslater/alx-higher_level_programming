@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """Test case for rectangle class"""
 import unittest
+import os
+import sys
+import io
+import logging
 from models.rectangle import Rectangle
 
 
@@ -48,13 +52,19 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         rectangle = Rectangle(10, 5, 3, 2, 1)
         self.assertEqual(rectangle.area(), 50)
-
     def test_display(self):
         rectangle = Rectangle(3, 2, 1, 0, 1)
-        with self.assertLogs() as log:
-            rectangle.display()
-        self.assertEqual(log.output, ['', '', '   ###', '   ###'])
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
 
+        try:
+            rectangle.display()
+            output = captured_output.getvalue().strip().split('\n')
+        finally:
+            sys.stdout = sys.__stdout__
+
+        expected_output = ['###', ' ###']
+        self.assertEqual(output, expected_output)
     def test_str(self):
         rectangle = Rectangle(10, 5, 2, 3, 4)
         self.assertEqual(str(rectangle), "[Rectangle] (4) 2/3 - 10/5")
