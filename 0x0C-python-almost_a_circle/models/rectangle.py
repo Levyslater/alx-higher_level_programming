@@ -12,16 +12,12 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the top-left
-            corner of the rectangle. Defaults to 0.
-            y (int, optional): The y-coordinate of the top-left
-            corner of the rectangle. Defaults to 0.
-            id (int, optional): The unique ID of the rectangle.
-            If not specified, a random integer will be generated.
+            x (int, optional): The x-coordinate of the top-left corner of the rectangle. Defaults to 0.
+            y (int, optional): The y-coordinate of the top-left corner of the rectangle. Defaults to 0.
+            id (int, optional): The unique ID of the rectangle. If not specified, a random integer will be generated.
 
         Raises:
-            ValueError: If the width or height is less than
-            or equal to zero.
+            ValueError: If the width or height is less than or equal to zero.
             TypeError: If the width or height is not an integer.
             ValueError: If the x or y coordinate is less than zero.
             TypeError: If the x or y coordinate is not an integer.
@@ -60,22 +56,18 @@ class Rectangle(Base):
     def width(self):
         """Retreive value of width"""
         return self.__width
-
     @property
     def height(self):
         """Retreive value of height"""
         return self.__height
-
     @property
     def x(self):
         """Retreives value of x"""
         return self.__x
-
     @property
     def y(self):
         """Retreives value of y"""
         return self.__y
-
     @width.setter
     def width(self, value: int):
         """Sets value of width.
@@ -113,7 +105,6 @@ class Rectangle(Base):
                 raise ValueError("height must be > 0")
         else:
             raise TypeError("height must be an integer")
-
     @x.setter
     def x(self, value):
         """Sets value of x"""
@@ -124,7 +115,6 @@ class Rectangle(Base):
                 raise ValueError("x must be >= 0")
         else:
             raise TypeError("x must be an integer")
-
     @y.setter
     def y(self, value):
         """Sets value of y"""
@@ -135,7 +125,6 @@ class Rectangle(Base):
                 raise ValueError("y must be >= 0")
         else:
             raise TypeError("y must be an integer")
-
     def area(self):
         """Returns area of rectangle"""
         return self.__width * self.__height
@@ -152,10 +141,10 @@ class Rectangle(Base):
         for j in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
+
     def __str__(self):
         """Returns string representation of rectangle"""
-        _string = f"[Rectangle]({self.id}) {self.__x}/
-        {self.__y} - {self.__width}/{self.__height}"
+        _string = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
         return _string
 
     def update(self, *args, **kwargs):
@@ -174,13 +163,10 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
     def to_dictionary(self):
         """
         Returns:
-            dict: A dictionary representation of the Rectangle
-            instance, with keys "id", "width",
-            "height", "x", and "y".
+            dict: A dictionary representation of the Rectangle instance, with keys "id", "width", "height", "x", and "y".
         """
         return {
             "id": self.id,

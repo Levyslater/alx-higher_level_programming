@@ -11,13 +11,9 @@ class Square(Rectangle):
 
         Args:
             size (int): The size of the square.
-            x (int, optional): The x-coordinate of the
-            top-left corner of the square. Defaults to 0.
-            y (int, optional): The y-coordinate of the
-            top-left corner of the square. Defaults to 0.
-            id (int, optional): The unique ID of the square.
-            If not specified, a new ID will be generated.
-            Defaults to None.
+            x (int, optional): The x-coordinate of the top-left corner of the square. Defaults to 0.
+            y (int, optional): The y-coordinate of the top-left corner of the square. Defaults to 0.
+            id (int, optional): The unique ID of the square. If not specified, a new ID will be generated. Defaults to None.
 
         Raises:
             ValueError: If the size is less than or equal to zero.
@@ -61,11 +57,8 @@ class Square(Rectangle):
         Updates the properties of the square object.
 
         Args:
-            *args: Positional arguments. The order of
-            the arguments is as follows: id, size, x, y.
-            **kwargs: Keyword arguments. The keys of the
-            dictionary are the attribute names and the values
-            are the new values of the attributes.
+            *args: Positional arguments. The order of the arguments is as follows: id, size, x, y.
+            **kwargs: Keyword arguments. The keys of the dictionary are the attribute names and the values are the new values of the attributes.
 
         Raises:
             ValueError: If the size is less than or equal to zero.
@@ -88,8 +81,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """
         Returns:
-            dict: A dictionary representation of the square object.
-            The keys are "id", "x", "size", and "y".
+            dict: A dictionary representation of the square object. The keys are "id", "x", "size", and "y".
         """
         return {"id": self.id, "x": self.x,
-                "size": self.width, "y": self.y}
+                "size": self.width, "y": self.y}            
