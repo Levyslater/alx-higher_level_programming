@@ -6,18 +6,21 @@ import json
 class Base:
     """class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """
         Initializes an instance id
 
         Args:
-            id (int, optional): The id of the instance. If not provided, a new id is generated.
+            id (int, optional): instance id. If not provided,
+            a new id is generated.
         """
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -36,7 +39,7 @@ class Base:
             return json.dumps(list_dictionaries)
         else:
             return "[]"
-        
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -65,7 +68,9 @@ class Base:
             json_string (str): The JSON string to deserialize.
 
         Returns:
-            List[Dict]: A list of dictionaries, where each dictionary represents an instance of the class.
+            List[Dict]: A list of dictionaries,
+            where each dictionary represents an instance
+            of the class.
         """
         if json_string is None or json_string == "[]":
             return []
@@ -95,13 +100,16 @@ class Base:
         """Loads all objects of the class from a json file.
 
         Returns:
-            A list of objects of the class. If the file does not exist or is empty, an empty list is returned.
+            A list of objects of the class.
+            If the file does not exist or is empty,
+            an empty list is returned.
         """
         try:
             with open(f'{cls.__name__}.json', "r", encoding="utf-8") as f:
                 json_string = f.read()
                 instance_dicts = cls.from_json_string(json_string)
-                instances = [cls.create(**instance_dict) for instance_dict in instance_dicts]
+                instances = ([cls.create(**instance_dict)
+                              for instance_dict in instance_dicts])
                 return instances
         except FileNotFoundError:
             return []
