@@ -3,15 +3,15 @@
 
 const args = process.argv.slice(2);
 
-function printFirstArgumentAsInteger(args) {
-    const firstArg = args[0];
-    const integerArg = parseInt(firstArg);
+function printFirstArgumentAsInteger (args) {
+  const firstArg = args[0];
+  const integerArg = parseInt(firstArg);
 
-    if (isNaN(integerArg)) {
-        console.log('Not a number');
-    } else {
-        console.log('My number: '+ integerArg);
-    }
+  if (isNaN(integerArg)) {
+    console.log('Not a number');
+  } else {
+    console.log('My number: ' + integerArg);
+  }
 }
 
 printFirstArgumentAsInteger(args);
