@@ -10,18 +10,18 @@ function secondLargest (args) {
   }
 
   let max = -Infinity;
-  let next_max = -Infinity;
+  let nextMax = -Infinity;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] > max) {
-      next_max = max;
+      nextMax = max;
       max = args[i];
-    } else if (args[i] > next_max && args[i] !== max) {
-      next_max = args[i];
+    } else if (args[i] > nextMax && args[i] !== max) {
+      nextMax = args[i];
     }
   }
 
-  console.log(next_max);
+  console.log(nextMax);
 }
 
 secondLargest(args);
