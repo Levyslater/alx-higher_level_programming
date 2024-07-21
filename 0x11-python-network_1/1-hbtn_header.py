@@ -1,9 +1,7 @@
 #!/usr/bin/python3
+
 """
 a Python script that fetches the X-Request-Id header from a given URL
-Note: This script should be run in a
-Unix-like environment (like Linux or MacOS)
-and requires Python 3.x installed.
 """
 import urllib.request
 import sys
