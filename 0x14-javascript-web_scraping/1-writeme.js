@@ -24,5 +24,5 @@ fs.writeFile(filePath, stringToWrite, 'utf-8', (err) => {
     console.error(`  path: '${err.path}'`);
     console.error('}');
     process.exit(1);
-}
+  }
 });
